@@ -1,0 +1,38 @@
+.users-navbar {
+    @apply bg-black text-white;
+}
+
+.topnav {
+    @apply flex justify-between items-center py-5 px-6 w-full;
+}
+
+.topnav-search {
+    & svg {
+        @apply h-5;
+    }
+}
+
+.topnav-icon-group {
+    @apply flex gap-x-3 items-center;
+}
+
+.bottomnav {
+    @apply bg-black w-full border-t border-gray-500 flex items-center justify-center duration-300;
+
+    &.fixed-nav {
+        @apply fixed top-0 left-0 z-50;
+    }
+}
+
+.bottomnav ul {
+    @apply flex items-center gap-x-6 text-sm px-6 overflow-auto;
+
+    & li {
+        @apply text-gray-400 py-5;
+
+        &.active {
+            @apply border-t-2 border-white text-gray-200 font-semibold;
+        }
+    }
+    
+}

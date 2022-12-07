@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ql-editor {
+  height: 500px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Red Hat Display", "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  resize: vertical;
+  font-size: 1rem;
+}
+
+.classroom .ql-toolbar {
+  display: none;
+  visibility: hidden;
+}
+
+.classroom .ql-container.ql-snow {
+  border: none !important;
+}
+
+.pace .pace-progress {
+  height: 4px;
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 500px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    html {
+      font-size: 12px;
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Red Hat Display",
+      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+    overflow-x: hidden;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    &:focus {
+      outline: 2px dotted orange;
+    }
+  }
+}
+
+@layer components {
+  .hoverAnimation {
+    @apply hover:bg-gray-400 hover:bg-opacity-30 rounded-full cursor-pointer h-[52px] w-[52px] lg:w-auto lg:h-auto lg:py-3 lg:px-4 transition duration-200 ease-in-out;
+  }
+
+  .icon {
+    @apply hover:bg-emerald-100 text-emerald-800 hover:bg-opacity-50 rounded-full cursor-pointer h-9 w-9 flex items-center justify-center transition duration-200 ease-in-out;
+  }
+
+  .logo {
+    @apply h-[40px] fill-current;
+  }
+
+  .menuOpened {
+    @apply fixed top-16 right-0 h-full w-60 bg-red-500 z-50;
+  }
+}
