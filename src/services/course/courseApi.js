@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react"
 export const courseApi = createApi({
   reducerPath: "courseApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `https://learnoapi.herokuapp.com/`,
+    baseUrl: `https://learnoapi.herokuapp.com/api/courses`,
     prepareHeaders: (headers) => {
       const token = localStorage.getItem("token") || null
 
