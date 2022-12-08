@@ -71,7 +71,7 @@ const Login = () => {
       </Link>
 
       <form
-        className="bg-white px-5 py-10 w-[400px] max-w-[450px] space-y-5 text-center rounded-lg shadow-sm"
+        className="bg-white px-5 py-10 w-full md:w-[400px] space-y-5 text-center rounded-lg shadow-sm"
         onSubmit={handleLogin}
       >
         <h2 className="text-2xl font-semibold text-gray-700">
