@@ -79,7 +79,7 @@ const ResetPassword = () => {
         <Logo className="h-10" dark />
       </Link>
 
-      <div className="flex flex-col gap-y-5 w-[500px] px-9 py-7 bg-white drop-shadow-lg mt-12 rounded-lg">
+      <div className="flex flex-col gap-y-5 w-full md:w-[500px] px-9 py-7 bg-white drop-shadow-lg mt-12 rounded-lg">
         <div className="space-y-2 text-center">
           <h1 className="font-bold text-2xl text-gray-700">
             Reset Your Password
