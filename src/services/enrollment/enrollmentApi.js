@@ -4,7 +4,7 @@ export const enrollmentApi = createApi({
   tagTypes: ['Enrollment'],
   reducerPath: "enrollmentApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `http://localhost:5000/api/enrollment`,
+    baseUrl: `https://learnoapi.herokuapp.com/api/enrollment`,
     prepareHeaders: (headers) => {
       const token = localStorage.getItem("token") || null
 
