@@ -4,7 +4,7 @@ export const authApi = createApi({
   tagTypes: ["AuthUser"],
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `http://localhost:5000/api/auth`,
+    baseUrl: `https://learnoapi.herokuapp.com/`,
     prepareHeaders: (headers) => {
       const token = localStorage.getItem("token") || null
 
