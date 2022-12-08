@@ -11,7 +11,7 @@ const Search = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const [courses, setCourses] = useState([])
   const searchInput = useRef(null)
-  
+
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -25,7 +25,6 @@ const Search = () => {
   useEffect(() => {
     const keyword = location.search.split("?")[1].split("=")[1]
 
-    console.log(keyword)
     setKeyword(keyword)
   }, [location])
 
@@ -46,7 +45,6 @@ const Search = () => {
 
   useEffect(() => {
     if (isError) {
-      console.log(error)
       if (error.data) {
         toast.error(error.data.message)
       } else {
@@ -85,7 +83,7 @@ const Search = () => {
         </div>
       )}
 
-      <form className="flex flex-col lg:flex-row items-center gap-4">
+      <form className="flex flex-col lg:flex-row items-center gap-4" onSubmit={handleSearch}>
 
         <div className="w-full space-y-2">
           <label htmlFor="search" className="text-sm text-gray-500">Search</label>
@@ -102,6 +100,10 @@ const Search = () => {
           <span className="text-sm text-gray-500">Categories</span>
           <DropListAutocomplete />
         </div> */}
+
+        <button type="submit" className="bg-emerald text-white py-2 px-4 font-semibold">
+          Search
+        </button>
       </form>
 
       <div>
