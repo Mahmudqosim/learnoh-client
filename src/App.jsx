@@ -30,7 +30,7 @@ function App() {
       <Routes>
         <Route element={<DashboardLayout />}>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/search/:keyword" element={<Search />} />
+          <Route path="/search" element={<Search />} />
           
           <Route path="/course/:courseId" element={<Course />} />
 

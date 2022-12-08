@@ -1,10 +1,13 @@
 import { SearchIcon } from "@heroicons/react/solid"
-import React, { useRef, useEffect } from "react"
+import { useRef, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import Transition from "../../../utils/Transition"
 
 function SearchModal({ id, searchId, modalOpen, setModalOpen }) {
   const modalContent = useRef(null)
   const searchInput = useRef(null)
+
+  const navigate = useNavigate()
 
   // close on click outside
   useEffect(() => {
@@ -29,6 +32,16 @@ function SearchModal({ id, searchId, modalOpen, setModalOpen }) {
   useEffect(() => {
     modalOpen && searchInput.current.focus()
   }, [modalOpen])
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    
+    setModalOpen(false)
+
+    navigate(`/search?keyword=${searchInput.current.value}`)
+
+    searchInput.current.value = ''
+  }
 
   return (
     <>
@@ -63,7 +76,7 @@ function SearchModal({ id, searchId, modalOpen, setModalOpen }) {
           className="bg-white overflow-auto max-w-2xl w-full max-h-full rounded shadow-lg"
         >
           {/* Search form */}
-          <form className="border-b border-gray-200">
+          <form className="border-b border-gray-200" onSubmit={handleSearch}>
             <div className="relative">
               <label htmlFor={searchId} className="sr-only">
                 Search

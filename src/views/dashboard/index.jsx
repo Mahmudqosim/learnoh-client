@@ -6,7 +6,6 @@ import { useInView } from "react-intersection-observer"
 import { useSearchPublishedCoursesMutation } from "../../services/course/courseApi"
 import Loader from "../../components/Loader"
 import { useState } from "react"
-import Pagination from "../../components/Pagination"
 
 const Dashboard = () => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -47,12 +46,14 @@ const Dashboard = () => {
     if(data && data.filteredCoursesCount === courses.length) return
 
     if (inView && !isLoading) {
+      setCurrentPage(currentPage + 1)
+      
       searchPublishedCourses({
         keyword: "",
-        currentPage: currentPage + 1,
+        currentPage: currentPage,
       })
     }
-  }, [inView])
+  }, [courses, currentPage, data, inView, isLoading, searchPublishedCourses])
 
   return (
     <div className="relative py-6 px-12 w-full bg-white">
@@ -100,8 +101,6 @@ const Dashboard = () => {
         </div>
 
         {isLoading && <Loader />}
-
-        {/* <Pagination /> */}
       </div>
     </div>
   )
